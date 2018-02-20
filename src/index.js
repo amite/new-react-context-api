@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { loadProfile } from "./service";
 import { PageWrapper } from "./PageWrapper";
+import { ProfileProvider } from "./ProfileContext";
 
 import "./styles.css";
 
@@ -18,7 +19,11 @@ class App extends Component {
   }
 
   render() {
-    return <PageWrapper profile={this.state.profile} />;
+    return (
+      <ProfileProvider value={this.state.profile}>
+        <PageWrapper />
+      </ProfileProvider>
+    );
   }
 }
 

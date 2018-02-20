@@ -6,7 +6,7 @@ import { ProfileWrapper } from "./ProfileWrapper";
 export const PageWrapper = props => (
   <div className="container">
     <Header />
-    <ProfileWrapper profile={props.profile} />
+    <ProfileWrapper />
     <Footer />
   </div>
 );

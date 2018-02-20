@@ -1,12 +1,19 @@
 import React from "react";
+import { ProfileConsumer } from "./ProfileContext";
 
 export const ProfileDetails = props => (
-  <div>
-    <div>
-      <strong>First name:</strong> {props.profile.firstName}
-    </div>
-    <div>
-      <strong>Last name:</strong> {props.profile.lastName}
-    </div>
-  </div>
+  <ProfileConsumer>
+    {context => {
+      return (
+        <div>
+          <div>
+            <strong>First name:</strong> {context.firstName}
+          </div>
+          <div>
+            <strong>Last name:</strong> {context.lastName}
+          </div>
+        </div>
+      );
+    }}
+  </ProfileConsumer>
 );
